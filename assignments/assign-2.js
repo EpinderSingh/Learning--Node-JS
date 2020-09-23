@@ -1,14 +1,12 @@
 const express = require('express');
+const path = require('path');
 
 const app = express();
+app.use(express.static(path.join(__dirname, 'public')));
 
-app.use('/user', (req, res, next) => {
-  console.log('FIRST Middelware!');
-  res.send('<h1>User middelware says HELLO!</h1>');
-});
 app.use('/', (req, res, next) => {
-  console.log('Second Middelware!');
-  res.send('<h1>Hello from assignment express!</h1>');
+  console.log('FIRST Middelware!');
+  res.sendFile(path.join(__dirname, '/index.html'));
 });
 
 app.listen(3000);
