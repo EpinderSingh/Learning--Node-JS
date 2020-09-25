@@ -1,0 +1,5 @@
+{
+  "prettier.bracketSpacing": false,
+"html.format.contentUnformatted": "",
+"html.autoClosingTags": false
+}
